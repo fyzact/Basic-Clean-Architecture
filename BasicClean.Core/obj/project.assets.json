@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\feyyaz.acet\\OneDrive - DRD\\Masaustu\\gitProjeler\\BasicCleanArthitecture\\BasicClean.Core\\BasicClean.Core.csproj",
+      "projectUniqueName": "c:\\GithubProjeler\\BasicCleanArthitecture\\BasicClean.Core\\BasicClean.Core.csproj",
       "projectName": "BasicClean.Core",
-      "projectPath": "C:\\Users\\feyyaz.acet\\OneDrive - DRD\\Masaustu\\gitProjeler\\BasicCleanArthitecture\\BasicClean.Core\\BasicClean.Core.csproj",
+      "projectPath": "c:\\GithubProjeler\\BasicCleanArthitecture\\BasicClean.Core\\BasicClean.Core.csproj",
       "packagesPath": "C:\\Users\\feyyaz.acet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\feyyaz.acet\\OneDrive - DRD\\Masaustu\\gitProjeler\\BasicCleanArthitecture\\BasicClean.Core\\obj\\",
+      "outputPath": "c:\\GithubProjeler\\BasicCleanArthitecture\\BasicClean.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
