@@ -4,14 +4,12 @@ using System.Text;
 
 namespace BasicClean.Core.Enitties
 {
-   
-        public abstract BaseEntity<Tkey>
-        {
+    public abstract class BaseEntity<Tkey>
+    {
 
-            public Tkey Id { get; set; }
-            public DateTime CreationDate { get; set; }
-            public bool IsDeleted { get; set; }
+        public Tkey Id { get; set; }
+        public DateTime CreationDate { get; set; }
+        public bool IsDeleted { get; set; }
 
     }
-   
 }
