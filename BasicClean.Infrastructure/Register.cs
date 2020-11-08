@@ -7,7 +7,7 @@ namespace BasicClean.Infrastructure
     {
         public static  IServiceCollection AddEntityFramework(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("Todo");
+            var connectionString = configuration.GetConnectionString("TodoDb");
             services.AddDbContextPool<TodoDbContext>(options => options.UseSqlServer(connectionString));
             return services;
         }
