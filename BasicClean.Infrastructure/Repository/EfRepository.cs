@@ -11,10 +11,11 @@ using System.Collections.Generic;
 namespace BasicClean.Infrastructure.Repository
 {
 
-    public class EFComandRepository<T, TKey> : ICommandRepository<T, TKey> where T : BaseEntity<TKey>
+
+    internal class EFCommandRepository<T, TKey> : ICommandRepository<T, TKey> where T : BaseEntity<TKey>
     {
-        TodoDbContext _context;
-        internal EFComandRepository(TodoDbContext todoDbContext)
+        readonly TodoDbContext _context;
+        public EFCommandRepository(TodoDbContext todoDbContext)
         {
             _context = todoDbContext;
         }
@@ -59,10 +60,10 @@ namespace BasicClean.Infrastructure.Repository
         }
     }
 
-    public class EFQueryRepository<T, TKey> : IQueryRepository<T, TKey> where T : BaseEntity<TKey>
+    internal class EFQueryRepository<T, TKey> : IQueryRepository<T, TKey> where T : BaseEntity<TKey>
     {
-        TodoDbContext _context;
-        internal EFQueryRepository(TodoDbContext todoDbContext)
+        readonly TodoDbContext _context;
+        public EFQueryRepository(TodoDbContext todoDbContext)
         {
             _context = todoDbContext;
         }

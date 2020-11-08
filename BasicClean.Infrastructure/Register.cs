@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BasicClean.Core.Interfaces.Repositories;
+using BasicClean.Infrastructure.Repository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 namespace BasicClean.Infrastructure
@@ -9,6 +11,7 @@ namespace BasicClean.Infrastructure
         {
             var connectionString = configuration.GetConnectionString("TodoDb");
             services.AddDbContextPool<TodoDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddScoped(typeof(ICommandRepository<,>), typeof(EFCommandRepository<,>));
             return services;
         }
     }
