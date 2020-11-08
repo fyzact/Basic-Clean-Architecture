@@ -1691,6 +1691,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "BasicClean.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BasicClean.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BasicClean.Core.dll": {}
+        }
       }
     }
   },
@@ -6148,10 +6158,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "BasicClean.Core/1.0.0": {
+      "type": "project",
+      "path": "../BasicClean.Core/BasicClean.Core.csproj",
+      "msbuildProject": "../BasicClean.Core/BasicClean.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "BasicClean.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.9",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 3.1.9",
       "NETStandard.Library >= 2.0.3"
@@ -6186,7 +6202,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\facet\\Desktop\\Github\\BasicCleanArthitecture\\BasicClean.Core\\BasicClean.Core.csproj": {
+              "projectPath": "C:\\Users\\facet\\Desktop\\Github\\BasicCleanArthitecture\\BasicClean.Core\\BasicClean.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

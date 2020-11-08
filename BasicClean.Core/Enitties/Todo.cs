@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BasicClean.Core.Enitties
 {
-    class Todo:BaseEntity<int>
+   public class Todo:BaseEntity<int>
     {
         public string Title { get; set; }
         public string Content { get; set; }
