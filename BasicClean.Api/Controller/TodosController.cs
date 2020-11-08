@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BasicClean.Core.Enitties;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 
 namespace BasicClean.Api.Controller
 {
