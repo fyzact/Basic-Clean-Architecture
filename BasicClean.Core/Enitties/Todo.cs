@@ -23,7 +23,7 @@ namespace BasicClean.Core.Enitties
                 State = TodoState.Created,
                 CreationDate=DateTime.Now,
                 IsDeleted=false,
-                Id=Guid.NewGuid()
+               
             };
 
             return todo;
