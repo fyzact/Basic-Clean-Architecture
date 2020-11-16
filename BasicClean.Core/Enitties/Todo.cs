@@ -17,7 +17,7 @@ namespace BasicClean.Core.Enitties
         public static Todo Create(string title, string content)
         {
             if (string.IsNullOrEmpty(title))
-                throw new ArgumentException($"{nameof(title)} should not be null or empty");
+                throw new ArgumentException($"{nameof(title)} cannot not be null or empty");
 
             var todo = new Todo
             {

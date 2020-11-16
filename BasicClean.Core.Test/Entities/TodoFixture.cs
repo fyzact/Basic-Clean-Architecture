@@ -1,8 +1,6 @@
 ﻿using BasicClean.Core.Enitties;
 using BasicClean.Core.ValueObjects;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace BasicClean.Core.Test.Entities
@@ -27,16 +25,32 @@ namespace BasicClean.Core.Test.Entities
         public void TodoTitle_ShouldBeNull_WhenCreated()
         {
             string title;
-            ArgumentException argument = Assert.Throws<ArgumentException>(()=> { Todo.Create(null, "content"); });
+            ArgumentException argument = Assert.Throws<ArgumentException>(()=> { Todo.Create(null,"content"); });
             Assert.Equal($"{nameof(title)} cannot be null or empty", argument.Message);
         }
 
         [Fact]
         public void TodoTitle_ShouldBeEmpty_WhenCreated()
         {
-            string title=string.Empty;
+            string title = string.Empty;
             ArgumentException argument = Assert.Throws<ArgumentException>(() => { Todo.Create(title, "content"); });
             Assert.Equal($"{nameof(title)} cannot be null or empty", argument.Message);
+        }
+
+        [Fact]
+        public void TodoContent_ShouldBeNull_WhenCreated()
+        {
+            string content;
+            ArgumentException argument = Assert.Throws<ArgumentException>(() => { Todo.Create("title", null); });
+            Assert.Equal($"{nameof(content)} cannot be null or empty", argument.Message);
+        }
+
+        [Fact]
+        public void TodoContent_ShouldBeEmpty_WhenCreated()
+        {
+            string content = string.Empty;
+            ArgumentException argument = Assert.Throws<ArgumentException>(() => { Todo.Create("title", content); });
+            Assert.Equal($"{nameof(content)} cannot be null or empty", argument.Message);
         }
     }
 }
