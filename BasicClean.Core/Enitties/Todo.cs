@@ -16,8 +16,12 @@ namespace BasicClean.Core.Enitties
         public TodoState State { get; set; }
         public static Todo Create(string title, string content)
         {
+            if (string.IsNullOrEmpty(title))
+                throw new ArgumentException($"{nameof(title)} should not be null or empty");
+
             var todo = new Todo
             {
+                Id = Guid.NewGuid(),
                 Title = title,
                 Content = content,
                 State = TodoState.Created,

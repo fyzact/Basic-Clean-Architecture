@@ -27,12 +27,12 @@ namespace BasicClean.Core.Test.Entities
         public void TodoTitle_ShouldBeNull_WhenCreated()
         {
             string title;
-            ArgumentException argument = Assert.Throws<ArgumentException>(()=> { Todo.Create(title, "content"); });
+            ArgumentException argument = Assert.Throws<ArgumentException>(()=> { Todo.Create(null, "content"); });
             Assert.Equal($"{nameof(title)} cannot be null or empty", argument.Message);
         }
 
         [Fact]
-        public void TodoTitle_ShouldBeemty_WhenCreated()
+        public void TodoTitle_ShouldBeEmpty_WhenCreated()
         {
             string title=string.Empty;
             ArgumentException argument = Assert.Throws<ArgumentException>(() => { Todo.Create(title, "content"); });
