@@ -26,6 +26,7 @@ namespace BasicClean.Api
         {
             services.AddControllers();
             services.AddEntityFramework(Configuration);
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +37,7 @@ namespace BasicClean.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -46,6 +48,9 @@ namespace BasicClean.Api
                 //    await context.Response.WriteAsync("Hello World!");
                 //});
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(setupAction => setupAction.SwaggerEndpoint("/swagger/v1/swagger.json", "Basic Clean Api"));
         }
     }
 }
