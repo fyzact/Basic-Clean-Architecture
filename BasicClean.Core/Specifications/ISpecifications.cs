@@ -6,8 +6,15 @@ using System.Text;
 
 namespace BasicClean.Core.Specifications
 {
-    public interface ISpecifications<T> where T : class
+    public abstract class Specification<T> where T : class
     {
-        Expression<Func<T, bool>> IsSatisfiedBy();
+        public abstract Expression<Func<T, bool>> ToExpression();
+        public bool IsSatisfiedBy(T entity)
+        {
+
+            Func<T, bool> func = ToExpression().Compile();
+            return func(entity);
+        }
+
     }
 }
