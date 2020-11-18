@@ -9,12 +9,7 @@ namespace BasicClean.Core.Specifications
     public abstract class Specification<T> where T : class
     {
         public abstract Expression<Func<T, bool>> ToExpression();
-        public bool IsSatisfiedBy(T entity)
-        {
-
-            Func<T, bool> func = ToExpression().Compile();
-            return func(entity);
-        }
+        public bool IsSatisfiedBy(T entity) => ToExpression().Compile().Invoke(entity);
 
     }
 }
