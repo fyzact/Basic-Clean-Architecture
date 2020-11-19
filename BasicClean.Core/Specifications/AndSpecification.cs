@@ -18,7 +18,7 @@ namespace BasicClean.Core.Specifications
             Expression<Func<T, bool>> right = _right.ToExpression();
             var leftInvokedExpression = Expression.Invoke(right, left.Parameters);
             var righInvokedExpression = Expression.Invoke(left, left.Parameters);
-            return (Expression<Func<T, bool>>)Expression.Lambda(Expression.AndAlso(leftInvokedExpression, righInvokedExpression),left.Parameters);
+            return Expression.Lambda<Func<T, bool>>(Expression.AndAlso(leftInvokedExpression, righInvokedExpression),left.Parameters);
 
         }
     }
