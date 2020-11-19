@@ -2,6 +2,7 @@
 using BasicClean.Core.Enitties;
 using BasicClean.Core.Interfaces.Repositories;
 using BasicClean.Core.Interfaces.Services;
+using BasicClean.Core.Specifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace BasicClean.Core.Services
         }
        public IEnumerable<TodoItemDto> AllTodos()
         {
-            return _todoRepository.GetAll().ToList().Select(p => new TodoItemDto
+            return _todoRepository.GetAll(new CreatedTodoSpecifications().And(new NonDeletedTodoSpecifications ()).ToExpression()).ToList().Select(p => new TodoItemDto
             {
                 Id=p.Id,
                 Title=p.Title,

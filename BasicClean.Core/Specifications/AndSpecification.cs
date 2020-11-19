@@ -16,7 +16,10 @@ namespace BasicClean.Core.Specifications
         {
             Expression<Func<T, bool>> left = _left.ToExpression();
             Expression<Func<T, bool>> right = _right.ToExpression();
-            return ((Expression<Func<T, bool>>)Expression.Lambda(Expression.And(right, left)));
+            var leftInvokedExpression = Expression.Invoke(right, left.Parameters);
+            var righInvokedExpression = Expression.Invoke(left, left.Parameters);
+            return (Expression<Func<T, bool>>)Expression.Lambda(Expression.AndAlso(leftInvokedExpression, righInvokedExpression),left.Parameters);
+
         }
     }
 }
