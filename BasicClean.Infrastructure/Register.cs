@@ -12,7 +12,10 @@ namespace BasicClean.Infrastructure
             var connectionString = configuration.GetConnectionString("TodoDb");
             services.AddDbContextPool<TodoDbContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped(typeof(ICommandRepository<,>), typeof(EFCommandRepository<,>));
+            services.BuildServiceProvider().GetRequiredService<TodoDbContext>().Database.EnsureCreated();
+
             return services;
         }
+
     }
 }
