@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BasicClean.Core.Interfaces.Services;
+using BasicClean.Core.Services;
 using BasicClean.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +28,7 @@ namespace BasicClean.Api
         {
             services.AddControllers();
             services.AddEntityFramework(Configuration);
+            services.AddTransient<ITodoService, TodoService>();
             services.AddSwaggerGen();
         }
 
@@ -43,10 +46,7 @@ namespace BasicClean.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-                //endpoints.MapGet("/", async context =>
-                //{
-                //    await context.Response.WriteAsync("Hello World!");
-                //});
+               
             });
 
             app.UseSwagger();
