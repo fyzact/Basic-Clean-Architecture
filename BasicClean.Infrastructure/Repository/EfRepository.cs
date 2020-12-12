@@ -96,7 +96,7 @@ namespace BasicClean.Infrastructure.Repository
 
         public  async Task<T> GetAsync(Expression<Func<T, bool>> match)
         {
-            return  await  _context.Set<T>().FindAsync(match);
+            return await _context.Set<T>().Where(match).FirstOrDefaultAsync();
         }
     }
 }
