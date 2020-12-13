@@ -29,6 +29,11 @@ namespace BasicClean.Core.Services
             }).AsEnumerable();
         }
 
+        public TodoItemDto CreteTodo(CreateTodoRequestDto createTodo)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<TodoItemDto> GetTodoById(Guid id)
         {
             var todo = await _todoRepository.GetAsync(p => p.Id == id && p.IsDeleted == false);
