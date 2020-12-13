@@ -7,7 +7,7 @@ namespace BasicClean.Core.Dtos
 {
     public class CreateTodoRequestDto
     {
-    {
+    
         public string Title { get; set; }
         public string Content { get; set; }
     }

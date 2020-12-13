@@ -11,7 +11,7 @@ namespace BasicClean.Api.Controller
     [ApiController]
     public class TodosController : ControllerBase
     {
-        private ITodoService _todoService;
+        readonly ITodoService _todoService;
         public TodosController(ITodoService todoService)
         {
             _todoService = todoService;

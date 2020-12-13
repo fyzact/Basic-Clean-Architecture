@@ -13,8 +13,8 @@ namespace BasicClean.Core.Services
 {
     public class TodoService : ITodoService
     {
-        IQueryRepository<Todo, Guid> _todoQueryRepository;
-        ICommandRepository<Todo, Guid> _todoCommandRepository;
+       readonly IQueryRepository<Todo, Guid> _todoQueryRepository;
+       readonly ICommandRepository<Todo, Guid> _todoCommandRepository;
         public TodoService(IQueryRepository<Todo, Guid> todoRepository, ICommandRepository<Todo, Guid> todoCommandRepository)
         {
             _todoQueryRepository = todoRepository;
