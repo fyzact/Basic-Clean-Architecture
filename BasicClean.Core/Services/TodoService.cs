@@ -14,9 +14,11 @@ namespace BasicClean.Core.Services
     public class TodoService : ITodoService
     {
         IQueryRepository<Todo, Guid> _todoRepository;
-        public TodoService(IQueryRepository<Todo, Guid> todoRepository)
+        ICommandRepository<Todo, Guid> _todoCommandRepository;
+        public TodoService(IQueryRepository<Todo, Guid> todoRepository, IQueryRepository<Todo, Guid> todoCommandRepository)
         {
             _todoRepository = todoRepository;
+            _todoCommandRepository = todoCommandRepository;
         }
         public IEnumerable<TodoItemDto> AllTodos()
         {
@@ -29,9 +31,17 @@ namespace BasicClean.Core.Services
             }).AsEnumerable();
         }
 
-        public TodoItemDto CreteTodo(CreateTodoRequestDto createTodo)
+        public async Task<TodoItemDto> CreteTodo(CreateTodoRequestDto createTodo)
         {
-            throw new NotImplementedException();
+            var todo = Todo.Create(createTodo.Title, createTodo.Content);
+            await _todoCommandRepository.AddAsync(todo);
+            return new TodoItemDto
+            {
+                Id = todo.Id,
+                Title = todo.Title,
+                Content = todo.Content,
+                State = todo.State
+            };
         }
 
         public async Task<TodoItemDto> GetTodoById(Guid id)
