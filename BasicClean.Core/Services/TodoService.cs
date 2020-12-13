@@ -13,16 +13,16 @@ namespace BasicClean.Core.Services
 {
     public class TodoService : ITodoService
     {
-        IQueryRepository<Todo, Guid> _todoRepository;
+        IQueryRepository<Todo, Guid> _todoQueryRepository;
         ICommandRepository<Todo, Guid> _todoCommandRepository;
-        public TodoService(IQueryRepository<Todo, Guid> todoRepository, IQueryRepository<Todo, Guid> todoCommandRepository)
+        public TodoService(IQueryRepository<Todo, Guid> todoRepository, ICommandRepository<Todo, Guid> todoCommandRepository)
         {
-            _todoRepository = todoRepository;
+            _todoQueryRepository = todoRepository;
             _todoCommandRepository = todoCommandRepository;
         }
         public IEnumerable<TodoItemDto> AllTodos()
         {
-            return _todoRepository.GetAll(new CreatedTodoSpecifications().And(new NonDeletedTodoSpecifications()).ToExpression()).ToList().Select(p => new TodoItemDto
+            return _todoQueryRepository.GetAll(new CreatedTodoSpecifications().And(new NonDeletedTodoSpecifications()).ToExpression()).ToList().Select(p => new TodoItemDto
             {
                 Id = p.Id,
                 Title = p.Title,
@@ -46,7 +46,7 @@ namespace BasicClean.Core.Services
 
         public async Task<TodoItemDto> GetTodoById(Guid id)
         {
-            var todo = await _todoRepository.GetAsync(p => p.Id == id && p.IsDeleted == false);
+            var todo = await _todoQueryRepository.GetAsync(p => p.Id == id && p.IsDeleted == false);
             if (todo is null) return null;
 
             var todoItem = new TodoItemDto { Content = todo.Content, Id = todo.Id, State = todo.State, Title = todo.Title };

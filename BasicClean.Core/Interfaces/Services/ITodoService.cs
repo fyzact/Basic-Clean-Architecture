@@ -11,7 +11,7 @@ namespace BasicClean.Core.Interfaces.Services
         IEnumerable<TodoItemDto> AllTodos();
         Task<TodoItemDto> GetTodoById(Guid id);
 
-        TodoItemDto CreteTodo(CreateTodoRequestDto createTodo);
+        Task<TodoItemDto> CreteTodo(CreateTodoRequestDto createTodo);
 
 
     }
