@@ -35,5 +35,18 @@ namespace BasicClean.Core.Enitties
 
             return todo;
         }
+
+        public Todo ChangeTitle(string title)
+        {
+            Title = title;
+            return this;
+        }
+
+        public Todo ChangeContent(string content)
+        {
+            Content = content;
+            return this;
+
+        }
     }
 }
