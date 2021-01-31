@@ -22,6 +22,10 @@ namespace BasicClean.Api
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                }).ConfigureLogging(p => p.ClearProviders()).UseSerilog();
+                }).ConfigureLogging(p => p.ClearProviders()).UseSerilog((hostBuilder, loggerConfiguration) =>
+                {
+                    var seqUrl = hostBuilder.Configuration.GetValue<string>("SeqUrl");
+                    loggerConfiguration.WriteTo.Seq(seqUrl);
+                });
     }
 }
