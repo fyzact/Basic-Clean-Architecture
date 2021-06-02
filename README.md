@@ -5,7 +5,7 @@ It is base project for ASP.NET Core following the principles of Clean Architectu
 * Entity Framework Core 5
 * Serilog
 * XUnit,  Moq
-* Docker
+* Docker & Docker Compose
 * Specification
 * Repository
 * DDD 
