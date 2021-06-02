@@ -1,5 +1,5 @@
 # Basic Clean Arthitecture
-It is base project for ASP.NET Core following the principles of Clean Architecture with .net5
+It is .NET5 WEB API base project for following the principles of Clean Architecture 
 ## Technologies & Tools & Approaches
 * ASP.NET Core 5 WEB API
 * Entity Framework Core 5
