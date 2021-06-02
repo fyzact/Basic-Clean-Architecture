@@ -1,5 +1,5 @@
 # Basic Clean Arthitecture
-It is base project for develop clean arthitecture with .net5.0
+It is base project for ASP.NET Core following the principles of Clean Architecture with .net5
 ## BasicClean.Core
 Entities,
 Value Objects,
