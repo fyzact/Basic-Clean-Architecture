@@ -9,11 +9,11 @@ namespace BasicClean.Infrastructure
     {
         public static  IServiceCollection AddEntityFramework(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("TodoDb");
-            services.AddDbContextPool<TodoDbContext>(options => options.UseSqlServer(connectionString));
+            //var connectionString = configuration.GetConnectionString("TodoDb");
+            //services.AddDbContextPool<TodoDbContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped(typeof(ICommandRepository<,>), typeof(EFCommandRepository<,>));
             services.AddScoped(typeof(IQueryRepository<,>), typeof(EFQueryRepository<,>));
-            services.BuildServiceProvider().GetRequiredService<TodoDbContext>().Database.EnsureCreated();
+            //services.BuildServiceProvider().GetRequiredService<TodoDbContext>().Database.EnsureCreated();
 
             return services;
         }

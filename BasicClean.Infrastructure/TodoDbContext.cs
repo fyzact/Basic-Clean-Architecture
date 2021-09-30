@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BasicClean.Infrastructure
 {
-     class TodoDbContext : DbContext
+   public  class TodoDbContext : DbContext
     {
         public TodoDbContext(DbContextOptions<TodoDbContext> options) : base(options)
         { }

@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicClean.Core.Test", "Bas
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{4683806C-91D2-47B1-B340-A231DF286549}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicClean.Api.Integration.Test", "BasicClean.Api.Integration.Test\BasicClean.Api.Integration.Test.csproj", "{B4E4272C-7ACB-4785-AE14-C76ADEDD4E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicClean.Api.Integration.Test", "BasicClean.Api.Integration.Test\BasicClean.Api.Integration.Test.csproj", "{B4E4272C-7ACB-4785-AE14-C76ADEDD4E61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -35,6 +35,11 @@ namespace BasicClean.Core.Services
         {
             var todo = Todo.Create(createTodo.Title, createTodo.Content);
             await _todoCommandRepository.AddAsync(todo);
+            return TodoMap(todo);
+        }
+
+        private TodoItemDto TodoMap(Todo todo)
+        {
             return new TodoItemDto
             {
                 Id = todo.Id,
