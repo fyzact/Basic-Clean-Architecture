@@ -32,9 +32,9 @@ namespace BasicClean.Api.Controller
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateTodoRequestDto createTodo)
+        public async Task<IActionResult> Post([FromBody] CreateTodoRequestDto createTodo)
         {
-            var todo = _todoService.CreteTodo(createTodo);
+            var todo = await _todoService.CreteTodo(createTodo);
             return CreatedAtAction("GetTodo", new { id = todo.Id }, todo);
         }
 

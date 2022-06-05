@@ -1,17 +1,15 @@
 ﻿using BasicClean.Api.Integration.Test.Helpers;
 using BasicClean.Core.Dtos;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace BasicClean.Api.Integration.Test
 {
-   public class TodoControllerTest: IClassFixture<TestStartup<Startup>>
+    public class TodoControllerTest: IClassFixture<TestStartup<Startup>>
     {
        readonly HttpClient _httpClient;
         public TodoControllerTest(TestStartup<Startup> testSturtup)
