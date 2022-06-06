@@ -1,7 +1,5 @@
 ﻿using BasicClean.Core.ValueObjects;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BasicClean.Core.Enitties
 {

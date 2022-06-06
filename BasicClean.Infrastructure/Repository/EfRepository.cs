@@ -1,7 +1,6 @@
 ﻿using BasicClean.Core.Enitties;
 using BasicClean.Core.Interfaces.Repositories;
 using System;
-
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;

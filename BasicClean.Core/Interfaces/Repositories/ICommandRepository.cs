@@ -1,7 +1,4 @@
 ﻿using BasicClean.Core.Enitties;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BasicClean.Core.Interfaces.Repositories

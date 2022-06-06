@@ -1,12 +1,9 @@
 ﻿using BasicClean.Core.Enitties;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BasicClean.Infrastructure
 {
-   public  class TodoDbContext : DbContext
+    public  class TodoDbContext : DbContext
     {
         public TodoDbContext(DbContextOptions<TodoDbContext> options) : base(options)
         { }

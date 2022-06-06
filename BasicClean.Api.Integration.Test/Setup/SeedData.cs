@@ -1,14 +1,9 @@
 ﻿using BasicClean.Core.Enitties;
 using BasicClean.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicClean.Api.Integration.Test.Setup
 {
-   public class SeedData
+    public class SeedData
     {
         public static void Todos(TodoDbContext todoDbContext)
         {
