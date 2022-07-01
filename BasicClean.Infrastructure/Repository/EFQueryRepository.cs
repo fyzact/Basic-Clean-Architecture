@@ -1,4 +1,13 @@
-﻿namespace BasicClean.Infrastructure.Repository
+﻿using BasicClean.Core.Enitties;
+using BasicClean.Core.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+
+namespace BasicClean.Infrastructure.Repository
 {
     internal class EFQueryRepository<T, TKey> : IQueryRepository<T, TKey> where T : BaseEntity<TKey>
     {
