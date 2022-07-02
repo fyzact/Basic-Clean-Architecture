@@ -1,8 +1,8 @@
-# ASP.NET CORE 5 Basic Clean Arthitecture
+# ASP.NET CORE 6 Basic Clean Arthitecture
 It is a basic .ASP.NET Core 5 project with following the principles of Clean Architecture 
 ## Technologies & Tools & Approaches
-* ASP.NET Core 5 WEB API
-* Entity Framework Core 5
+* ASP.NET Core 6 WEB API
+* Entity Framework Core 6
 * Serilog
 * XUnit,  Moq
 * Docker & Docker Compose
