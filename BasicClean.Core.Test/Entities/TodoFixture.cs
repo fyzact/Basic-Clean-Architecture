@@ -21,34 +21,21 @@ namespace BasicClean.Core.Test.Entities
             Assert.Equal(TodoState.Created, todo.State);
         }
 
-        [Fact]
-        public void TodoTitle_ShouldBeNull_WhenCreated()
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        public void TodoTitle_ShouldNotBeNullOrEmppty_WhenCreated(string title)
         {
-            string title;
-            ArgumentException argument = Assert.Throws<ArgumentException>(()=> { Todo.Create(null,"content"); });
+            ArgumentException argument = Assert.Throws<ArgumentException>(()=> { Todo.Create(title,"content"); });
             Assert.Equal($"{nameof(title)} cannot be null or empty", argument.Message);
         }
 
-        [Fact]
-        public void TodoTitle_ShouldBeEmpty_WhenCreated()
-        {
-            string title = string.Empty;
-            ArgumentException argument = Assert.Throws<ArgumentException>(() => { Todo.Create(title, "content"); });
-            Assert.Equal($"{nameof(title)} cannot be null or empty", argument.Message);
-        }
 
-        [Fact]
-        public void TodoContent_ShouldBeNull_WhenCreated()
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        public void TodoContent_ShouldNotBeNull_WhenCreated(string content)
         {
-            string content;
-            ArgumentException argument = Assert.Throws<ArgumentException>(() => { Todo.Create("title", null); });
-            Assert.Equal($"{nameof(content)} cannot be null or empty", argument.Message);
-        }
-
-        [Fact]
-        public void TodoContent_ShouldBeEmpty_WhenCreated()
-        {
-            string content = string.Empty;
             ArgumentException argument = Assert.Throws<ArgumentException>(() => { Todo.Create("title", content); });
             Assert.Equal($"{nameof(content)} cannot be null or empty", argument.Message);
         }
